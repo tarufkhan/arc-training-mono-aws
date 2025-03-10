@@ -1,6 +1,5 @@
 provider "aws" {
   region  = "ap-south-1"
-  profile = "804295906245_AdministratorAccess"
 }
 
 module "vpc" {
