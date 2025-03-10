@@ -1,5 +1,10 @@
+provider "aws" {
+  region  = "ap-south-1"
+  profile = "804295906245_AdministratorAccess"
+}
+
 module "vpc" {
-  source             = "../"
+  source             = "../../modules/vpc"
   vpc_cidr           = "10.0.0.0/16"
   vpc_name           = "arc-iac-vpc"
   azs                = ["ap-south-1a", "ap-south-1b"]
@@ -11,8 +16,4 @@ module "vpc" {
     Environment = "testing"
     Project     = "arc-vpc"
   }
-}
-
-provider "aws" {
-  region = "ap-south-1"
 }
